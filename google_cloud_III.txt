@@ -1,0 +1,132 @@
+Google Cloud - Virtual Machine
+	- create a new instance
+	- Creation of instance from a template
+	- Create an instance from an image
+	- creation of a instance from the market place
+		
+- Storage options
+	object storage
+		cloud strorage
+	instance storage
+		- presistent disks
+	database storage
+		-sql 
+		- no sql
+		- analytic
+
+	managed database
+		->sql
+			cloud sql
+			cloud spanner
+		->nosql
+			cloud datastore/filestore =>documetn typte
+			bigtable =>analytic
+		->analytic
+			big query => data warehousing
+
+	Zonal Persistent Disk
+	Regional Persistent Disck
+	Local SSD
+	Cloud Storage Buckets
+	FileStore
+	
+
+Attach GPU
+	-> cpu platform and gpu
+		->add gpu
+
+-> custom machine
+	->select custom
+->pre-emtable instance ->only for 24 hours
+
+
+->app-engine
+
+
+	git clone https://github.com/GoogleCloudPlatform/python-docs-samples
+	gcloud app deploy app.yaml
+	gcloud app browse
+	autoscaling
+		-specify your machine parametersin app.yaml
+->cloud function
+	->serverless
+	->executes code based on events within gcp
+		->events specifict to gcp service
+			->storage
+				->update
+				->delete
+				->Archive
+			->Cloud Pub/Sub
+				->Publish a message
+			->HTTP
+				->POST
+				->GET
+				->PUT
+				->DELETE
+				->OPTIONS
+
+		->trigger
+			-> when an even it occurred
+				-> function will be triggered
+	->functions
+		node.js/python/go
+	
+->cloud platform
+	-> vi main.py
+	-> zip main.zip main.py
+   	-> gsutil cp main.zip gs://<bucket1> 
+	-> gcloud functions deploy hello_gcs --runtime=python3.7 --trigger-resource=<bucketname> --trigger-event=google.storage.finalize --source=gs://<bucket-name>/main.zip
+
+->cloud run
+	->containers
+
+
+database
+->sql (upto 10TB region)
+->spanner (horizontally scallable global,expensinve)
+
+no sql
+	datastore
+		jason
+		heirarchical structure
+		native mode:firestore:real timme synchnronization
+		datastore mode:recommended choice
+		one database per project
+		we can create entities that we use
+	bigtable:fully managed nosql,high volume,designed for very large volume analytics,low latency
+		wide column
+		petabyte scale
+		low latency write
+		analytics	
+
+	bigquery
+		petabate style
+		data warehousing
+		sql query language
+		some support for joins
+		non transactional
+
+redis and memchached
+	cloud memory store
+	-> used for key value 
+	->session cachind
+	-> used for cachining commonly used query results
+	->memcacheD: memory cluster
+		1 to 32 vcpu
+		1 to 256GB
+		upto 5tb PERINSTANCE
+
+cloud storage
+	->unstructed data
+
+pub/sub:queue service
+	-asyncrhonous
+	-topic 
+	-subscribe to topic
+	pub/sub
+		-create a topic
+		-create subscription
+			-> publish message
+
+
+
