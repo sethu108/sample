@@ -1,2 +1,3 @@
 print("added m1 file")
-print(added a newline)
+print("added a newline")
+print("pushing m1 file")
